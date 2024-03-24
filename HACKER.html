@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+</head>
+<body>
+    <input type="text" id="userInput">
+    <button onclick="sendEmail()">Send</button>
+
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function sendEmail() {
+    var userInput = document.getElementById('userInput').value;
+    // Use an email service to send 'userInput' to your email address
+    // Example: using Email.js
+    emailjs.send("service_prewotr", "YOUR_TEMPLATE_ID", {
+        message: userInput
+    }).then(function(response) {
+        console.log('Email sent:', response);
+        alert('Input sent successfully!');
+    }, function(error) {
+        console.error('Email send error:', error);
+        alert('Failed to send input. Please try again later.');
+    });
+}</script></body></html>
